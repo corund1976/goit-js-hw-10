@@ -39,7 +39,7 @@ function onInput(event) {
         .catch((error) => Notiflix.Notify.failure('Oops, there is no country with that name'));
 };
 
-inputNode.addEventListener('input', debounce(onInput, 300));
+inputNode.addEventListener('input', debounce(onInput, DEBOUNCE_DELAY));
 
 function renderCountriesList(countries) {
   countryItem.innerHTML = '';
