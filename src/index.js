@@ -26,6 +26,10 @@ function onInput() {
 
     fetchCountries(inputText)
         .then((countries) => {
+            if (countries.status === 404) {
+                Notiflix.Notify.failure("Oops, there is no country with that name.");
+                return;
+            }
             if (countries.length > 10) {
                 Notiflix.Notify.info('Too many matches found. Please enter a more specific name');
                 return;
@@ -36,7 +40,7 @@ function onInput() {
             }
             renderCountryInfo(countries);
         })
-        .catch((error) => Notiflix.Notify.failure('Oops, there is no country with that name'));
+        .catch((error) => console.log(error));
 };
 
 inputNode.addEventListener('input', debounce(onInput, DEBOUNCE_DELAY));
