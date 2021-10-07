@@ -27,7 +27,6 @@ body {
 
 .country-list-item {
   list-style: none;
-
   display: flex;
   align-items: center;
 }
@@ -48,5 +47,4 @@ img {
   display: block;
   max-width: 100%;
   margin-right: 10px;
-  /* height: auto; */
 }
