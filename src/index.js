@@ -14,7 +14,7 @@ const countriesList = document.querySelector('.country-list');
 const countryItem = document.querySelector('.country-info');
 const inputNode = document.querySelector('#search-box');
 
-function onInput(event) {
+function onInput() {
     const inputText = inputNode.value.trim();
 
     countriesList.innerHTML = '';
